@@ -1,0 +1,179 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <div id="navdiv">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">BOOKTRACKER</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_view' %}">ADD BOOKS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'list_view' %}">BOOKS LIST</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          </div>
+
+
+          {% if messages %}
+          {% for i in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{i}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+        {% endif %}
+
+        
+            <style>
+                
+                body {
+                    font-family: 'Arial', sans-serif;
+                }
+        
+                .store-title {
+                    font-size: 4rem;
+                    font-weight: bold;
+                    color: rgb(80, 55, 59);
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+                }
+        
+                .card {
+                    background-color: #f8f9fa;
+                    border: none;
+                    text-align: center;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+        
+                .card-title {
+                    font-size: 1.2rem;
+                    color: #303030;
+                }
+        
+                .navbar-brand {
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: pink !important;
+                }
+        
+                .navbar-nav .nav-link {
+                    font-size: 1rem;
+                    margin: 0 10px;
+                    color: rgb(255, 255, 255) !important;
+                }
+        
+                .navbar-nav .nav-link:hover {
+                    color: pink !important;
+                }
+
+                #foot{
+                    font-size: 20px;
+                    background-color: rgb(80, 55, 59);
+                }
+                #navdiv{
+                    background-color: #574242;
+                }
+            </style>
+            <!-- <img src="{% static 'b8.jpg'%}"> -->
+            <!-- Navbar -->
+            
+        
+            <!-- Store Section -->
+            <section class="store text-center py-5">
+                <h1 class="store-title">BOOK RECOMMENDATION</h1>
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{% static 'b14.jpg' %}" class="card-img-top" alt="Jisoo">
+                                <div class="card-body">
+                                    <h5 class="card-title">It Ends with Us - Colleen Hoover</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{% static 'b11.jpg'%}" class="card-img-top" alt="Jennie">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Rules of Magic. Eine zauberhafte Familie: Roman - Alice Hoffman</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{% static 'b12.jpg'%}" class="card-img-top" alt="Rosé">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bis zum Mond und zurück - Dani Atkins</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{% static 'b13.jpg' %}" class="card-img-top" alt="Lisa">
+                                <div class="card-body">
+                                    <h5 class="card-title">Twisted Lies - Ana Huang</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Footer -->
+             <footer class="text-white text-center py-3" id="foot">
+                <p>Books Galore! What’s on Your Shelf?</p>
+            </footer> 
+         
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+
+
+
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
